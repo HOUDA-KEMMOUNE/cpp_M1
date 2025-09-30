@@ -8,5 +8,5 @@ int	main()
 	alloc_zombie = newZombie("Houda");
 	randomChump("Random Zombie");
 	// alloc_zombie->announce();
-	delete	alloc_zombie;
+	delete[]	alloc_zombie;
 }
