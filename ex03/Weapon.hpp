@@ -10,7 +10,10 @@ class Weapon
         std::string type;
     public:
         const std::string   &getType(void);
-        void                set_type(std::string nt);
+        void                setType(std::string new_type);
+        Weapon(std::string T);
+        Weapon(void);
+        ~Weapon(void);
 };
 
 # endif
