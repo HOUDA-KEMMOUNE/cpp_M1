@@ -12,7 +12,7 @@ class HumanB
     public:
         void    attack(void);
         HumanB(std::string n_name);
-        void    setWeapon(Weapon n_weapon);
+        void    setWeapon(Weapon &n_weapon);
 };
 
 # endif
