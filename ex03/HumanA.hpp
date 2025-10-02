@@ -9,10 +9,10 @@
 class HumanA
 {
     private:
-        Weapon&     weapon;  // Reference to weapon, not a copy
+        Weapon&     weapon;
         std::string name;
     public:
-        HumanA(std::string n_name, Weapon& n_weaponA);  // Take reference parameter
+        HumanA(std::string n_name, Weapon& n_weaponA);
         void        attack(void);
 };
 
