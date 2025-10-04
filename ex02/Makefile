@@ -13,9 +13,9 @@ $(NAME): $(OBJ)
 	@$(CPP) $(CPPFLAGS) $(OBJ) -o $@
 
 clean:
-	@rm $(OBJ)
+	@rm -f $(OBJ)
 
 fclean: clean
-	@rm $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
