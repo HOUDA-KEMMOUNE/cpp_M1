@@ -3,43 +3,23 @@
 
 void	write_in_new_file(std::string s1, std::string s2, std::string input, std::ofstream& creat_file)
 {
-	std::string	new_line;
-	size_t j = 0;
-	size_t		pos = 0;
-	int		c = 0;
-	size_t		pos_arr[1000];
-	int		pos_index = 0;
+	size_t	pos = 0;
+	size_t	found;
 
-	while ((pos = input.find(s1, pos + 1)) != std::string::npos)
+	if (s1.empty())
 	{
-		pos_arr[pos_index] = pos;
-		pos_index++;
+		creat_file << input << "\n";
+		return ;
 	}
-	
-	pos_index = 0;
-	while (input[j])
+
+	while ((found = input.find(s1, pos)) != std::string::npos)
 	{
-		if (pos_arr[pos_index] != std::string::npos && j != pos_arr[pos_index])
-		{
-			creat_file << input[j];
-		}
-		else if (j == pos_arr[pos_index])
-		{
-			creat_file << s2;
-			while (s1[c])
-			{
-				c++;
-				j++;
-			}
-			if (input[j] != '\0')
-				creat_file << ' ';
-			if (input[j] == '\0')
-				creat_file << '\n';
-			pos_index++;
-		}
-		j++;
-		c = 0;
+		creat_file << input.substr(pos, found - pos);
+		creat_file << s2;
+		pos = found + s1.length();
 	}
+
+	creat_file << input.substr(pos) << '\n';
 }
 
 int main(int ac, const char **av)
